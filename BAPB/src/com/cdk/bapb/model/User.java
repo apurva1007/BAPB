@@ -8,30 +8,30 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int u_Id;
+    private int uid;
     private String userName;
-    private String contactDetail;
+    private String phone;
 
-    public User(int u_Id, String name, String contactDetail) {
-        this.u_Id = u_Id;
+    public User(int uid, String name, String phone) {
+        this.uid = uid;
         this.userName = name;
-        this.contactDetail = contactDetail;
+        this.phone = phone;
     }
 
     public User() {
     }
 
-    public User(String name, String contactDetail) {
+    public User(String name, String phone) {
         this.userName = name;
-        this.contactDetail = contactDetail;
+        this.phone = phone;
     }
 
-    public int getU_Id() {
-        return u_Id;
+    public int getUid() {
+        return uid;
     }
 
-    public void setU_Id(int u_Id) {
-        this.u_Id = u_Id;
+    public void setUid(int uid) {
+        this.uid = uid;
     }
 
     public String getUserName() {
@@ -42,20 +42,20 @@ public class User {
         this.userName = userName;
     }
 
-    public String getContactDetail() {
-        return contactDetail;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setContactDetail(String contactDetail) {
-        this.contactDetail = contactDetail;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override
     public String toString() {
         return "Car{" +
-                "u_Id='" + u_Id + '\'' +
+                "uid='" + uid + '\'' +
                 ", userName='" + userName + '\'' +
-                ", contactDetail='" + contactDetail + '\'' +
+                ", phone='" + phone + '\'' +
                 '}';
     }
 }

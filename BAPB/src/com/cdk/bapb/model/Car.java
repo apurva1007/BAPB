@@ -1,5 +1,7 @@
 package com.cdk.bapb.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -17,6 +19,8 @@ public class Car {
     private double baseSellingPrice;
     private Date entryDate;
     private int remainingBiddingDays;
+
+    @Autowired
     private User user;
 
     public Car() {
