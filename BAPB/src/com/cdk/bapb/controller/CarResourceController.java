@@ -50,7 +50,12 @@ public class CarResourceController {
         return "Car with vin '"+value+" ' resource updated successfully!";
     }
 
-    @RequestMapping(value = "/allCars",produces = APPLICATION_JSON_VALUE ,method = RequestMethod.GET)
+    @RequestMapping(value = "/car/{field}/{fieldValue}",produces = "application/json" ,method = RequestMethod.GET)
+    public Collection<Car> readCarsAsJson(@PathVariable String field,@PathVariable String fieldValue){
+        return carService.readCars(field,fieldValue);
+    }
+
+    @RequestMapping(value = "/cars",produces = "application/json" ,method = RequestMethod.GET)
     public Collection<Car> readAllCarsAsJson(){
         return carService.readAll();
     }

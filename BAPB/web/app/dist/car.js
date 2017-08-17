@@ -3,8 +3,6 @@ class Car {
     constructor(make, model, yearOfBuying, distanceTravelled, baseSellingPrice) {
         this.make = "";
         this.model = "";
-        this.yearOfBuying = "";
-        this.entryDate = "";
         this.make = make;
         this.model = model;
         this.yearOfBuying = yearOfBuying;

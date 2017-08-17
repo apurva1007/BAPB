@@ -10,36 +10,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require("@angular/core");
 const http_1 = require("@angular/http");
-const car_1 = require("./car");
-let AddCarComponent = class AddCarComponent {
+let SearchCarComponent = class SearchCarComponent {
     constructor(http) {
         this.http = http;
-        this.title = "Add Car";
-        this.car = new car_1.Car("Audi", "Q7", 2007, 786999, 768767.8);
+        this.searchField = "";
+        this.searchFieldValue = "";
     }
-    addCar() {
-        console.log("Inside addCar()!!!!");
-        let addUrl = "/rest/addCar";
-        var requestHeaders = new http_1.Headers({ 'Content-Type': 'application/json' });
+    ngOnInit() {
+    }
+    searchCars() {
+        var searchURL = "";
+        if (this.searchField === "" && this.searchFieldValue === "") {
+            searchURL = "/rest/cars";
+        }
+        else {
+            searchURL = "/rest/car/" + this.searchField + "/" + this.searchFieldValue;
+        }
+        var requestHeaders = new http_1.Headers({ 'Accept': 'application/json' });
         var options = new http_1.RequestOptions({ headers: requestHeaders });
-        this.car.entryDate = new Date();
-        this.http.post(addUrl, this.car, options).subscribe(res => {
-            this.successMessage = res.toString();
-            console.log(res.text());
-            this.errorMessage = "";
-        }, error => {
-            this.errorMessage = error;
-            this.successMessage = "";
-        });
+        this.http.get(searchURL, options).subscribe(res => this.cars = res.json());
     }
 };
-AddCarComponent = __decorate([
+SearchCarComponent = __decorate([
     core_1.Component({
-        selector: 'addCar',
-        templateUrl: '../partials/addcar.component.html',
-        styleUrls: ['../css/form.component.css'],
+        selector: 'search',
+        templateUrl: '../partials/carSearch.component.html'
     }), 
     __metadata('design:paramtypes', [http_1.Http])
-], AddCarComponent);
-exports.AddCarComponent = AddCarComponent;
-//# sourceMappingURL=addcar.component.js.map
+], SearchCarComponent);
+exports.SearchCarComponent = SearchCarComponent;
+//# sourceMappingURL=carSearch.component.js.map

@@ -4,16 +4,19 @@ import { Router } from '@angular/router';
 @Component({
     selector:'bapb-app',
     template:`<div>
-        <h1 align="center">{{title}}</h1>
-        <input type="button" value="Register" (click)="register();" />
-        <input type="button" value="Add Your Car" (click)="addCar();" />
-        <input type="button" value="SEARCH" (click)="search();" />
+        <div class="topnav" id="myTopnav">
+            <h1>{{title}}</h1>
+            <input class="button" type="button" value="Register User" (click)="register();" />
+            <input class="button" type="button" value="Add Your Car" (click)="addCar();" />
+            <input class="button" type="button" value="Search Car" (click)="search();" />
+        </div>
        	<router-outlet></router-outlet>      
-    </div>`
+    </div>`,
+    styleUrls:['../css/top.navigation.component.css']
 })
 export class AppComponent{
 
-    title:string ="BAPBidders";
+    title:string ="BAP Bidders";
 
     constructor(private router:Router){}
 

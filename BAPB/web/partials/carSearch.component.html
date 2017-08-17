@@ -1,0 +1,28 @@
+<div>
+	    <h1>BAPBiders</h1><br>
+	    <h2> Search Car By :</h2><br/>
+	    <select name="searchField" [(ngModel)]="searchField">
+	      <option value=''>--Select--</option>
+	      <option value='Make'>Make</option>
+	      <option value='Model'>Model</option>
+	      <option value='Year'>Year</option>
+	    </select>
+	    <input type="text" placeholder="Enter {{searchField}}"[(ngModel)]="searchFieldValue"/><br/>  
+	    <input type='button' value='Search' (click)='searchCars();' />
+	    <table>
+        <thead>
+            <tr><th>Name</th><th>Year</th><th>Distance Travelled</th><th>Base Price</th><th>link</th></tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let car of cars">
+                
+                  <td>{{car.make}} {{car.model}}</td>
+                  <td>{{car.yearOfBuying}}</td>
+                  <td>{{car.distanceTravelled}}</td>
+                  <td>{{car.baseSellingPrice}}</td>
+				<td><a routerLink="carDetails/1">Show Details </a> </td>
+                
+            </tr>
+        </tbody>
+    		</table>
+	    </div>

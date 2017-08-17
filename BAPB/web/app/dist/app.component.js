@@ -13,7 +13,7 @@ const router_1 = require('@angular/router');
 let AppComponent = class AppComponent {
     constructor(router) {
         this.router = router;
-        this.title = "BAPBidders";
+        this.title = "BAP Bidders";
     }
     register() {
         var registerLink = ['/register'];
@@ -32,12 +32,15 @@ AppComponent = __decorate([
     core_1.Component({
         selector: 'bapb-app',
         template: `<div>
-        <h1 align="center">{{title}}</h1>
-        <input type="button" value="Register" (click)="register();" />
-        <input type="button" value="Add Your Car" (click)="addCar();" />
-        <input type="button" value="SEARCH" (click)="search();" />
+        <div class="topnav" id="myTopnav">
+            <h1>{{title}}</h1>
+            <input class="button" type="button" value="Register User" (click)="register();" />
+            <input class="button" type="button" value="Add Your Car" (click)="addCar();" />
+            <input class="button" type="button" value="Search Car" (click)="search();" />
+        </div>
        	<router-outlet></router-outlet>      
-    </div>`
+    </div>`,
+        styleUrls: ['../css/top.navigation.component.css']
     }), 
     __metadata('design:paramtypes', [router_1.Router])
 ], AppComponent);

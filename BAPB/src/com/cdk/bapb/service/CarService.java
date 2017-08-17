@@ -37,6 +37,11 @@ public class CarService {
     }
 
     @Transactional
+    public Collection<Car> readCars(String field, String fieldValue) {
+        return carDAO.getCars(field,fieldValue);
+    }
+
+    @Transactional
     public void remove(int carId) {
         carDAO.delete(carId);
     }

@@ -17,12 +17,14 @@ const addcar_component_1 = require('./addcar.component');
 const register_component_1 = require("./register.component");
 const home_component_1 = require("./home.component");
 const routes_config_1 = require("./routes.config");
+const carSearch_component_1 = require("./carSearch.component");
+const carDetails_component_1 = require("./carDetails.component");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, routes_config_1.configuredRoutes],
-        declarations: [addcar_component_1.AddCarComponent, app_component_1.AppComponent, home_component_1.HomeComponent, register_component_1.RegisterComponent],
+        declarations: [addcar_component_1.AddCarComponent, app_component_1.AppComponent, home_component_1.HomeComponent, register_component_1.RegisterComponent, carSearch_component_1.SearchCarComponent, carDetails_component_1.CarDetailsComponent],
         bootstrap: [app_component_1.AppComponent]
     }), 
     __metadata('design:paramtypes', [])

@@ -12,18 +12,15 @@ public class Car {
     private int carId;
     private String make;
     private String model;
-    private String yearOfBuying;
-    private int distanceTravelled;
+    private int yearOfBuying;
+    private long distanceTravelled;
     private double baseSellingPrice;
-    private String entryDate;
+    private Date entryDate;
 
-    /*@OneToOne(targetEntity = User.class)
-    private User user;
-*/
     public Car() {
     }
 
-    public Car(String make, String model, String yearOfBuying, int distanceTravelled, double baseSellingPrice, String entryDate) {
+    public Car(String make, String model, int yearOfBuying, long distanceTravelled, double baseSellingPrice, Date entryDate) {
         this.make = make;
         this.model = model;
         this.yearOfBuying = yearOfBuying;
@@ -32,7 +29,7 @@ public class Car {
         this.entryDate = entryDate;
     }
 
-    public Car(int carId, String make, String model, String yearOfBuying, int distanceTravelled, double baseSellingPrice, String entryDate) {
+    public Car(int carId, String make, String model, int yearOfBuying, long distanceTravelled, double baseSellingPrice, Date entryDate) {
         this.carId = carId;
         this.make = make;
         this.model = model;
@@ -40,7 +37,6 @@ public class Car {
         this.distanceTravelled = distanceTravelled;
         this.baseSellingPrice = baseSellingPrice;
         this.entryDate = entryDate;
-//        this.user = user;
     }
 
     public int getCarId() {
@@ -67,19 +63,19 @@ public class Car {
         this.model = model;
     }
 
-    public String getYearOfBuying() {
+    public int getYearOfBuying() {
         return yearOfBuying;
     }
 
-    public void setYearOfBuying(String yearOfBuying) {
+    public void setYearOfBuying(int yearOfBuying) {
         this.yearOfBuying = yearOfBuying;
     }
 
-    public int getDistanceTravelled() {
+    public long getDistanceTravelled() {
         return distanceTravelled;
     }
 
-    public void setDistanceTravelled(int distanceTravelled) {
+    public void setDistanceTravelled(long distanceTravelled) {
         this.distanceTravelled = distanceTravelled;
     }
 
@@ -91,20 +87,24 @@ public class Car {
         this.baseSellingPrice = baseSellingPrice;
     }
 
-    public void setEntryDate(String entryDate) {
+    public void setEntryDate(Date entryDate) {
         this.entryDate = entryDate;
+    }
+
+    public Date getEntryDate() {
+        return entryDate;
     }
 
     @Override
     public String toString() {
         return "Car{" +
-                "carId='" + carId + '\'' +
+                "carId=" + carId +
                 ", make='" + make + '\'' +
                 ", model='" + model + '\'' +
-                ", yearOfBuying='" + yearOfBuying + '\'' +
+                ", yearOfBuying=" + yearOfBuying +
                 ", distanceTravelled=" + distanceTravelled +
                 ", baseSellingPrice=" + baseSellingPrice +
-//                ", user=" + user +
+                ", entryDate=" + entryDate +
                 '}';
     }
 }
