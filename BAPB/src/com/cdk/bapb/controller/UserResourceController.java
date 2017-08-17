@@ -21,7 +21,7 @@ public class UserResourceController {
         return "User with Uid '"+value+" ' resource updated successfully!";
     }
 
-    @RequestMapping(value = "/add",consumes = APPLICATION_JSON_VALUE ,produces = TEXT_PLAIN_VALUE ,method = RequestMethod.POST)
+    @RequestMapping(value = "/addUser",consumes = APPLICATION_JSON_VALUE ,produces = TEXT_PLAIN_VALUE ,method = RequestMethod.POST)
     public String addUser(@RequestBody User user){
         System.out.println(user);
         int value = userService.add(user);

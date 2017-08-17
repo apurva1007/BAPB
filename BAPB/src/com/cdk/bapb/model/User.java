@@ -9,20 +9,14 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int uid;
-    private String userName;
+    private String name;
     private String phone;
-
-    public User(int uid, String name, String phone) {
-        this.uid = uid;
-        this.userName = name;
-        this.phone = phone;
-    }
 
     public User() {
     }
 
     public User(String name, String phone) {
-        this.userName = name;
+        this.name = name;
         this.phone = phone;
     }
 
@@ -34,12 +28,12 @@ public class User {
         this.uid = uid;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPhone() {
@@ -52,9 +46,9 @@ public class User {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "uid='" + uid + '\'' +
-                ", userName='" + userName + '\'' +
+        return "User{" +
+                "uid=" + uid +
+                ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 '}';
     }

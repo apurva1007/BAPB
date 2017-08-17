@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Collection;
 import java.util.List;
 
 @Repository
@@ -14,29 +15,27 @@ public class CarDAO {
     EntityManager entityManager;
 
 
-    public String update(Car car){
+    public int update(Car car){
         entityManager.merge(car);
         return car.getCarId();
     }
 
-    public String save(Car car){
+    public int save(Car car){
+        System.out.println(car);
         entityManager.persist(car);
         return car.getCarId();
     }
 
-
-    public Car selectById(String carId){
+    public Car selectById(int carId){
         return entityManager.find(Car.class,carId);
     }
 
-
-    public List<Car> selectAll(){
+    public Collection<Car> selectAll(){
         return entityManager.createQuery("from Car").getResultList();
 
     }
 
-
-    public void delete(String carId) {
+    public void delete(int carId) {
         Car car = entityManager.find(Car.class,carId);
         entityManager.remove(car);
     }

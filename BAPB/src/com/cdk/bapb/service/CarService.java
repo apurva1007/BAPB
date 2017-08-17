@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -15,28 +16,28 @@ public class CarService {
     CarDAO carDAO;
 
     @Transactional
-    public String add(Car car) {
+    public int add(Car car) {
         return carDAO.save(car);
     }
 
     @Transactional
-    public String modify(Car car) {
+    public int modify(Car car) {
         return carDAO.update(car);
     }
 
     @Transactional
-    public Car readById(String carId) {
+    public Car readById(int carId) {
         return carDAO.selectById(carId);
     }
 
     @Transactional
-    public List<Car> readAll(){
+    public Collection<Car> readAll(){
         return carDAO.selectAll();
 
     }
 
     @Transactional
-    public void remove(String carId) {
+    public void remove(int carId) {
         carDAO.delete(carId);
     }
 

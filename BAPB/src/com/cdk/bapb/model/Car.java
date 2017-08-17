@@ -1,7 +1,5 @@
 package com.cdk.bapb.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -11,33 +9,30 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String carId;
+    private int carId;
     private String make;
     private String model;
     private String yearOfBuying;
     private int distanceTravelled;
     private double baseSellingPrice;
-    private Date entryDate;
-    private int remainingBiddingDays;
+    private String entryDate;
 
-    @Autowired
+    /*@OneToOne(targetEntity = User.class)
     private User user;
-
+*/
     public Car() {
     }
 
-    public Car(String make, String model, String yearOfBuying, int distanceTravelled, double baseSellingPrice, Date entryDate, int remainingBiddingDays, User user) {
+    public Car(String make, String model, String yearOfBuying, int distanceTravelled, double baseSellingPrice, String entryDate) {
         this.make = make;
         this.model = model;
         this.yearOfBuying = yearOfBuying;
         this.distanceTravelled = distanceTravelled;
         this.baseSellingPrice = baseSellingPrice;
         this.entryDate = entryDate;
-        this.remainingBiddingDays = remainingBiddingDays;
-        this.user = user;
     }
 
-    public Car(String carId, String make, String model, String yearOfBuying, int distanceTravelled, double baseSellingPrice, Date entryDate, int remainingBiddingDays, User user) {
+    public Car(int carId, String make, String model, String yearOfBuying, int distanceTravelled, double baseSellingPrice, String entryDate) {
         this.carId = carId;
         this.make = make;
         this.model = model;
@@ -45,15 +40,14 @@ public class Car {
         this.distanceTravelled = distanceTravelled;
         this.baseSellingPrice = baseSellingPrice;
         this.entryDate = entryDate;
-        this.remainingBiddingDays = remainingBiddingDays;
-        this.user = user;
+//        this.user = user;
     }
 
-    public String getCarId() {
+    public int getCarId() {
         return carId;
     }
 
-    public void setCarId(String carId) {
+    public void setCarId(int carId) {
         this.carId = carId;
     }
 
@@ -97,12 +91,8 @@ public class Car {
         this.baseSellingPrice = baseSellingPrice;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
+    public void setEntryDate(String entryDate) {
+        this.entryDate = entryDate;
     }
 
     @Override
@@ -114,23 +104,7 @@ public class Car {
                 ", yearOfBuying='" + yearOfBuying + '\'' +
                 ", distanceTravelled=" + distanceTravelled +
                 ", baseSellingPrice=" + baseSellingPrice +
-                ", user=" + user +
+//                ", user=" + user +
                 '}';
-    }
-
-    public int getRemainingBiddingDays() {
-        return remainingBiddingDays;
-    }
-
-    public void setRemainingBiddingDays(int remainingBiddingDays) {
-        this.remainingBiddingDays = remainingBiddingDays;
-    }
-
-    public Date getEntryDate() {
-        return entryDate;
-    }
-
-    public void setEntryDate(Date entryDate) {
-        this.entryDate = entryDate;
     }
 }
