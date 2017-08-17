@@ -4,6 +4,7 @@ import {RegisterComponent} from "./register.component";
 import {AddCarComponent} from "./addcar.component";
 import {CarDetailsComponent} from "./carDetails.component";
 import {SearchCarComponent} from "./carSearch.component";
+import {DetailComponent} from "./details.component";
 
 let routes:Routes = [
     {path:'home',component:HomeComponent},
@@ -11,6 +12,7 @@ let routes:Routes = [
     {path:'addCar',component:AddCarComponent},
     {path:'search',component:SearchCarComponent},
     {path:'carDetails/:carId',component:CarDetailsComponent},
+    {path:'detail/:id', component:DetailComponent},
     {path:'',redirectTo:'/home',pathMatch:'full'}
 ];
 

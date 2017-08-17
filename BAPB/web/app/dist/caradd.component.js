@@ -35,7 +35,7 @@ let AddCarComponent = class AddCarComponent {
 AddCarComponent = __decorate([
     core_1.Component({
         selector: 'bapb-app',
-        templateUrl: '../partials/addcar.component.html',
+        templateUrl: '../partials/car.component.html',
         styleUrls: ['../css/car.component.styles.css'],
     }), 
     __metadata('design:paramtypes', [http_1.Http])

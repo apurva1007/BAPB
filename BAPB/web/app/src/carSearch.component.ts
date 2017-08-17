@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Http,Headers,RequestOptions} from "@angular/http";
+import { Router } from '@angular/router';
 import {Car} from "./car";
 
 
@@ -18,7 +19,9 @@ export class SearchCarComponent implements  OnInit{
     searchFieldValue:string = "";
 
 
-    constructor(private http:Http) {}
+    constructor(private http:Http) {
+
+    }
 
 
     ngOnInit(){
@@ -40,6 +43,10 @@ export class SearchCarComponent implements  OnInit{
         var options = new RequestOptions({headers: requestHeaders});
 
         this.http.get(searchURL, options).subscribe(res => this.cars = res.json());
+    }
+
+    detail(carId) {
+        console.log(carId);
     }
 
 }

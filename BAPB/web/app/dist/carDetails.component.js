@@ -9,7 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
+const router_1 = require('@angular/router');
 let CarDetailsComponent = class CarDetailsComponent {
+    constructor(route) {
+        this.route = route;
+    }
+    ngOnInit() {
+        this.route.params.subscribe(params => {
+            let id = params['carId'];
+            console.log(" got id : " + id);
+        });
+    }
 };
 CarDetailsComponent = __decorate([
     core_1.Component({
@@ -19,7 +29,7 @@ CarDetailsComponent = __decorate([
         <p>im in in car details</p>
     </div>`
     }), 
-    __metadata('design:paramtypes', [])
+    __metadata('design:paramtypes', [router_1.ActivatedRoute])
 ], CarDetailsComponent);
 exports.CarDetailsComponent = CarDetailsComponent;
 //# sourceMappingURL=carDetails.component.js.map

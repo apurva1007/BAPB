@@ -9,11 +9,12 @@ import {HomeComponent} from "./home.component";
 import {configuredRoutes} from "./routes.config";
 import {SearchCarComponent} from "./carSearch.component";
 import {CarDetailsComponent} from "./carDetails.component";
+import {DetailComponent} from "./details.component";
 
 
 @NgModule({
 	imports:[BrowserModule,FormsModule,HttpModule,configuredRoutes],
-	declarations:[AddCarComponent,AppComponent,HomeComponent,RegisterComponent,SearchCarComponent,CarDetailsComponent],
+	declarations:[AddCarComponent,AppComponent,HomeComponent,RegisterComponent,SearchCarComponent,CarDetailsComponent,DetailComponent],
 	bootstrap:[AppComponent]
 })
 export class AppModule{

@@ -5,9 +5,8 @@
 	      <option value=''>--Select--</option>
 	      <option value='Make'>Make</option>
 	      <option value='Model'>Model</option>
-	      <option value='Year'>Year</option>
 	    </select>
-	    <input type="text" placeholder="Enter {{searchField}}"[(ngModel)]="searchFieldValue"/><br/>  
+	    <input type="text" placeholder="Enter {{searchField}}" [(ngModel)]="searchFieldValue"/><br/>  
 	    <input type='button' value='Search' (click)='searchCars();' />
 	    <table>
         <thead>
@@ -20,8 +19,11 @@
                   <td>{{car.yearOfBuying}}</td>
                   <td>{{car.distanceTravelled}}</td>
                   <td>{{car.baseSellingPrice}}</td>
-				<td><a routerLink="carDetails/1">Show Details </a> </td>
-                
+	<td>{{car.carId}}</td>
+				<!--<td><a [routerLink]="{{car.carId}}">Show Details </a> </td>-->
+	<!--<td><a [routerLink]="['/carDetails'], {'id': car.carId}]" >Show Details</a></td>-->
+	<td><a [routerLink]="['/carDetails', car.carId]" >Show Details</a></td>
+	<td><button (click)="detail(car.carId);">Show Details</button></td>                
             </tr>
         </tbody>
     		</table>
